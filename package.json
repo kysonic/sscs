@@ -1,8 +1,14 @@
 {
-  "name": "sscc",
-  "version": "0.0.1",
-  "description": "DOM Size and Scroll Interactive Cheat Sheet",
-  "main": "index.js",
-  "author": "Miroshnichenko Anton",
-  "license": "MIT"
+    "name": "sscc",
+    "version": "0.0.1",
+    "description": "DOM Size and Scroll Interactive Cheat Sheet",
+    "main": "index.js",
+    "author": "Miroshnichenko Anton",
+    "license": "MIT",
+    "scripts": {
+        "dev": "http-server ."
+    },
+    "devDependencies": {
+        "http-server": "^14.1.1"
+    }
 }
