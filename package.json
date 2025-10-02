@@ -1,0 +1,8 @@
+{
+  "name": "sscc",
+  "version": "0.0.1",
+  "description": "DOM Size and Scroll Interactive Cheat Sheet",
+  "main": "index.js",
+  "author": "Miroshnichenko Anton",
+  "license": "MIT"
+}
