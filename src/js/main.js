@@ -40,3 +40,35 @@ updateInterfaceValues();
 setScrollHeight();
 // Setup basic position
 rect.scrollTo(0, 206);
+
+const buttonsList = document.querySelectorAll('*[data-prop]');
+
+buttons.addEventListener('click', (e) => {
+    if (e.target.dataset.prop) {
+        const isActive = e.target.classList.contains('active');
+        window[e.target.dataset.prop].style.display = !isActive ? 'flex' : 'none';
+        e.target.classList[!isActive ? 'add' : 'remove']('active');
+    }
+});
+
+size.addEventListener('change', (e) => {
+    const root = document.documentElement;
+
+    root.style.setProperty('--rect-size', e.target.value + 'px');
+
+    updateInterfaceValues();
+});
+
+border.addEventListener('change', (e) => {
+    const root = document.documentElement;
+
+    root.style.setProperty('--rect-border-size', e.target.value + 'px');
+    updateInterfaceValues();
+});
+
+padding.addEventListener('change', (e) => {
+    const root = document.documentElement;
+
+    root.style.setProperty('--rect-padding-size', e.target.value + 'px');
+    updateInterfaceValues();
+});

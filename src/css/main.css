@@ -45,10 +45,10 @@ body {
         position: relative;
         overflow: hidden;
 
-        max-width: 1024px;
-        max-height: 1024px;
-        width: 90%;
-        height: 90%;
+        max-width: 968px;
+        max-height: 968px;
+        width: 95%;
+        height: 95%;
 
         display: flex;
         justify-content: center;
@@ -350,7 +350,7 @@ body {
         opacity: 0.3;
     }
 
-    /* Controls */
+    /* Buttons */
 
     .buttons {
         position: absolute;
@@ -377,8 +377,7 @@ body {
             display: inline-block;
             cursor: pointer;
             color: var(--text-color);
-            font-weight: bold;
-            padding: 10px 15px;
+            padding: 10px 12px;
             text-decoration: none;
             border: none;
 
@@ -395,5 +394,29 @@ body {
                 }
             }
         }
+    }
+
+    /* Controls */
+
+    .controls {
+        position: absolute;
+
+        width: 200px;
+        height: auto;
+
+        padding: 10px;
+
+        left: 25px;
+        top: calc(50% - 80px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+
+        border-radius: 8px;
+        background-color: #ffffff69;
+        z-index: 11;
     }
 }

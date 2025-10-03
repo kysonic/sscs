@@ -128,17 +128,26 @@
                     <div class="dashes"></div>
                 </div>
 
-                <div class="buttons">
-                    <button class="btn">offsetTop</button>
-                    <button class="btn">offsetLeft</button>
-                    <button class="btn">clientTop</button>
-                    <button class="btn">clientLeft</button>
-                    <button class="btn">offsetTop</button>
-                    <button class="btn">offsetLeft</button>
-                    <button class="btn">clientTop</button>
-                    <button class="btn">clientLeft</button>
-                    <button class="btn">clientTop</button>
-                    <button class="btn">clientLeft</button>
+                <div id="buttons" class="buttons">
+                    <button class="btn active" data-prop="offsetTop">offsetTop</button>
+                    <button class="btn active" data-prop="offsetLeft">offsetLeft</button>
+                    <button class="btn active" data-prop="clientTop">clientTop</button>
+                    <button class="btn active" data-prop="clientLeft">clientLeft</button>
+                    <button class="btn active" data-prop="clientWidth">clientWidth</button>
+                    <button class="btn active" data-prop="clientHeight">clientHeight</button>
+                    <button class="btn active" data-prop="offsetWidth">offsetWidth</button>
+                    <button class="btn active" data-prop="offsetHeight">offsetHeight</button>
+                    <button class="btn active" data-prop="scrollTop">scrollTop</button>
+                    <button class="btn active" data-prop="scrollHeight">scrollHeight</button>
+                </div>
+
+                <div id="controls" class="controls">
+                    <label for="size">Rect size</label>
+                    <input id="size" type="range" value="300" min="200" max="500" />
+                    <label for="border">Rect border</label>
+                    <input id="border" type="range" value="50" min="50" max="100" />
+                    <label for="padding">Rect padding</label>
+                    <input id="padding" type="range" value="20" min="20" max="40" />
                 </div>
             </div>
         </div>
