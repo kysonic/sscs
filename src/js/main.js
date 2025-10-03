@@ -1,3 +1,6 @@
+import { store } from './store/index.js';
+import { binder } from './store/binder.js';
+
 function updateInterfaceValues() {
     offsetTop.querySelector('.value').textContent = rect.offsetTop;
     offsetLeft.querySelector('.value').textContent = rect.offsetLeft;
@@ -71,4 +74,10 @@ padding.addEventListener('change', (e) => {
 
     root.style.setProperty('--rect-padding-size', e.target.value + 'px');
     updateInterfaceValues();
+});
+
+binder.init();
+
+increaseCount.addEventListener('click', () => {
+    store.state.count++;
 });
