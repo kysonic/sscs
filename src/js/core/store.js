@@ -32,5 +32,10 @@ export function createStore(initialState = {}) {
             Object.keys(state).forEach((key) => delete state[key]);
             Object.assign(state, { ...initialState });
         },
+
+        emit(property, value) {
+            state[property] = value;
+            subscribers.forEach((callback) => callback({ ...state }, { [property]: value }, property));
+        },
     };
 }
