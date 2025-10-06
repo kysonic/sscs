@@ -1,0 +1,31 @@
+.sscs {
+    .restrict {
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+
+        align-items: center;
+        justify-content: center;
+
+        display: none;
+        z-index: 999;
+        padding: 20px;
+
+        .title {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 968px) {
+    .sscs {
+        .restrict {
+            display: flex;
+        }
+    }
+}
