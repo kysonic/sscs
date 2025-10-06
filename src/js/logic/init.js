@@ -23,6 +23,8 @@ function init() {
     initScroll();
     updateInterfaceValues();
     initCodeBlocks();
+    // Loading
+    store.state.loading = true;
 }
 
 init();

@@ -9,6 +9,7 @@
 @import url('./highligther.css');
 @import url('./dialog.css');
 @import url('./restrict.css');
+@import url('./loading.css');
 
 body {
     background-color: var(--background-color);

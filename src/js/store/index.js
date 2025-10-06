@@ -32,7 +32,8 @@ export const store = createStore({
     // Globals
     showHtml: false,
     tip: '',
-    tipTitle: ''
+    tipTitle: '',
+    loading: true,
 });
 
 // COMPUTED

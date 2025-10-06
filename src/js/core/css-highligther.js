@@ -62,7 +62,6 @@ export function createCssHighlighter() {
                 }
 
                 if (RULES.propertyRegexp.test(match[0])) {
-                    console.log(match);
                     result += this.highlightProperty(match);
                 }
 

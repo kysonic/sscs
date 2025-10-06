@@ -6,7 +6,8 @@
     "author": "Miroshnichenko Anton",
     "license": "MIT",
     "scripts": {
-        "dev": "http-server ."
+        "dev": "http-server .",
+        "deploy": "surge ."
     },
     "devDependencies": {
         "http-server": "^14.1.1"

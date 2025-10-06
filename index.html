@@ -97,7 +97,8 @@
                     <div class="arrow"></div>
                     <div class="text-container" data-tip="offsetLeft">
                         <div class="text" data-tip="offsetLeft">
-                            <span data-tip="offsetLeft">offsetLeft</span> <span class="info" data-tip="offsetLeft">i</span>
+                            <span data-tip="offsetLeft">offsetLeft</span>
+                            <span class="info" data-tip="offsetLeft">i</span>
                         </div>
                     </div>
                     <div class="value-container">
@@ -114,7 +115,7 @@
                     <div class="arrow"></div>
                     <div class="text-container" data-tip="clientTop">
                         <div class="text" data-tip="clientTop">
-                             <span data-tip="clientTop">clientTop</span>
+                            <span data-tip="clientTop">clientTop</span>
                         </div>
                     </div>
                     <div class="value-container">
@@ -148,7 +149,8 @@
                     <div class="arrow"></div>
                     <div class="text-container" data-tip="clientHeight">
                         <div class="text" data-tip="clientHeight">
-                            <span data-tip="clientHeight">clientHeight</span> <span class="info" data-tip="clientHeight">i</span>
+                            <span data-tip="clientHeight">clientHeight</span>
+                            <span class="info" data-tip="clientHeight">i</span>
                         </div>
                     </div>
                     <div class="value-container">
@@ -166,7 +168,8 @@
                     <div class="arrow"></div>
                     <div class="text-container" data-tip="offsetHeight">
                         <div class="text" data-tip="offsetHeight">
-                            <span data-tip="offsetHeight">offsetHeight</span> <span class="info" data-tip="offsetHeight">i</span>
+                            <span data-tip="offsetHeight">offsetHeight</span>
+                            <span class="info" data-tip="offsetHeight">i</span>
                         </div>
                     </div>
                     <div class="value-container">
@@ -184,7 +187,8 @@
                     <div class="arrow"></div>
                     <div class="text-container" data-tip="clientWidth">
                         <div class="text" data-tip="clientWidth">
-                            <span data-tip="clientWidth">clientWidth</span> <span class="info" data-tip="clientWidth">i</span>
+                            <span data-tip="clientWidth">clientWidth</span>
+                            <span class="info" data-tip="clientWidth">i</span>
                         </div>
                     </div>
                     <div class="value-container">
@@ -202,7 +206,8 @@
                     <div class="arrow"></div>
                     <div class="text-container" data-tip="offsetWidth">
                         <div class="text" data-tip="offsetWidth">
-                            <span data-tip="offsetWidth">offsetWidth</span> <span class="info" data-tip="offsetWidth">i</span>
+                            <span data-tip="offsetWidth">offsetWidth</span>
+                            <span class="info" data-tip="offsetWidth">i</span>
                         </div>
                     </div>
                     <div class="value-container">
@@ -242,6 +247,10 @@
                 </div>
 
                 <!-- Controls -->
+
+                <div data-bind-show="loading:!value"  class="loading">
+                    <span class="loader"></span>
+                </div>
             </div>
             <!-- Code -->
             <div data-bind-show="showHtml:value" id="html" class="wrapper" style="display: none">
@@ -280,7 +289,7 @@
         <!-- Dialog -->
         <!-- Mobile Restiction -->
         <div class="restrict">
-            <h4 class="title">Не поддерживается для мобильных устройств 📵📵📵. Просьба открыть на декстопе 🖥️🖥️🖥️. </h4>
+            <h4 class="title">Не поддерживается для мобильных устройств 📵📵📵. Просьба открыть на декстопе 🖥️🖥️🖥️.</h4>
         </div>
         <!-- Mobile Restiction -->
         <script src="./src/js/main.js" type="module"></script>
