@@ -17,6 +17,7 @@
 
         .block {
             height: 100%;
+            max-height: 50%;
 
             background-color: var(--code-background-color);
             border-radius: 8px;

@@ -1,5 +1,5 @@
 export const code = {
-    HTML: `
+    HTML: () => `
 <div class="container">
     <div class="wrapper">
         <div class="rect">
@@ -8,7 +8,7 @@ export const code = {
     </div>
 </div>
 `.trim(),
-    CSS: `
+    CSS: (size = 300, border = 50, padding = 20) => `
 .container {
     display: flex;
     justify-content: center;
@@ -29,10 +29,10 @@ export const code = {
     }
 
     .rect {
-        width: 300px;
-        height: 300px;
-        border: 50px solid rgb(176, 210, 211);
-        padding: 20px;
+        width: ${size}px;
+        height: ${size}px;
+        border: ${border}px solid rgb(176, 210, 211);
+        padding: ${padding}px;
         overflow: auto;
     }
 }

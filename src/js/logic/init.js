@@ -1,12 +1,10 @@
 import { store } from '../store/index.js';
 import { binder } from '../store/binder.js';
 import { updateInterfaceValues } from './interface.js';
-import { createHtmlHighlighter } from '../core/html-highligther.js';
-import { createCssHighlighter  } from '../core/css-highligther.js';
 import { code } from '../data/code.js';
+import { cssHighlighter, htmlHighlighter } from '../services/highlighters.js';
 
-const htmlHighlighter = createHtmlHighlighter();
-const cssHighlighter = createCssHighlighter();
+
 
 function initScroll() {
     rect.scrollTo(0, 252);
@@ -14,8 +12,8 @@ function initScroll() {
 }
 
 function initCodeBlocks() {
-    htmlCode.innerHTML = htmlHighlighter.highlight(code.HTML);
-    cssCode.innerHTML = cssHighlighter.highlight(code.CSS);
+    htmlCode.innerHTML = htmlHighlighter.highlight(code.HTML());
+    cssCode.innerHTML = cssHighlighter.highlight(code.CSS());
 }
 
 function init() {

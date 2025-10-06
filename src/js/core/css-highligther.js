@@ -1,8 +1,8 @@
 const createCssRules = () => {
     const selectorRule = '\\s*(\\.|#)(\\w+) {\\s*';
-    const selectorRegexp = new RegExp(selectorRule, 'gi');
-    const propertyRule = '([\\w-]+):[s]*([\\w\\d%,()\\s]+);\\s+';
-    const propertyRegexp = new RegExp(propertyRule, 'gi');
+    const selectorRegexp = new RegExp(selectorRule, 'i');
+    const propertyRule = '([\\w-]+):[s]*([\\w\\d\\%\\,\\(\\)\\s]+);\\s+';
+    const propertyRegexp = new RegExp(propertyRule, 'i');
     const closeSelectorRule = '\\s*}\\s*';
     const closeSelectorRegexp = new RegExp(closeSelectorRule);
     const pattern = new RegExp(selectorRule + '|' + propertyRule + '|' + closeSelectorRule, 'gi');
@@ -62,6 +62,7 @@ export function createCssHighlighter() {
                 }
 
                 if (RULES.propertyRegexp.test(match[0])) {
+                    console.log(match);
                     result += this.highlightProperty(match);
                 }
 

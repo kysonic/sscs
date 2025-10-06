@@ -1,5 +1,7 @@
 import { store } from '../store/index.js';
 import { updateInterfaceValues } from './interface.js';
+import { code } from '../data/code.js';
+import { cssHighlighter, htmlHighlighter } from '../services/highlighters.js';
 
 // Resize
 window.addEventListener('resize', updateInterfaceValues);
@@ -43,6 +45,8 @@ store.subscribe((state, changes, prop) => {
     if (Object.keys(rectPropsToCssVars).includes(prop)) {
         document.documentElement.style.setProperty(rectPropsToCssVars[prop], state[prop] + 'px');
         updateInterfaceValues();
+        // Update CSS so how vars changed
+        cssCode.innerHTML = cssHighlighter.highlight(code.CSS(state['rectSize'], state['rectBorder'], state['rectPadding']));
     }
 });
 
