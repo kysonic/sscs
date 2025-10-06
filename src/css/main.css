@@ -2,10 +2,12 @@
 @import url('./clean.css');
 @import url('./containers.css');
 @import url('./rect.css');
+@import url('./arrows.css');
 @import url('./interfaces.css');
 @import url('./controls.css');
 @import url('./code.css');
 @import url('./highligther.css');
+@import url('./dialog.css');
 
 
 body {

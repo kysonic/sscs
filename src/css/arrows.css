@@ -1,0 +1,89 @@
+/* Arrows */
+
+#offsetTop {
+    left: calc(50% - var(--rect-size) / 2 - var(--rect-border-size) - var(--rect-padding-size));
+    height: calc(50% - var(--rect-size) / 2 - var(--rect-border-size) - var(--rect-padding-size));
+}
+
+#offsetLeft {
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-border-size) - var(--rect-padding-size));
+    width: calc(50% - var(--rect-size) / 2 - var(--rect-border-size) - var(--rect-padding-size));
+}
+
+#clientTop {
+    left: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size));
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-border-size) - var(--rect-padding-size));
+    height: var(--rect-border-size);
+}
+
+#clientLeft {
+    left: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size) - var(--rect-border-size));
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size));
+    width: var(--rect-border-size);
+}
+
+#scrollTop {
+    display: none;
+    left: calc(50% + var(--rect-size) / 2 + var(--rect-border-size) + var(--rect-padding-size) + 125px);
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size));
+    height: 0;
+
+    .dashes {
+        width: 125px;
+        left: -125px;
+    }
+}
+
+#scrollHeight {
+    left: calc(50% + var(--rect-size) / 2 + var(--rect-border-size) + var(--rect-padding-size) + 175px);
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size));
+
+    .dashes {
+        width: 175px;
+        left: -175px;
+    }
+}
+
+#clientHeight {
+    left: calc(50% + var(--rect-size) / 2 + var(--rect-padding-size) + var(--rect-border-size) + 25px);
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size));
+    height: calc(var(--rect-size) + var(--rect-padding-size) * 2);
+
+    .dashes {
+        width: 25px;
+        left: -25px;
+    }
+}
+
+#offsetHeight {
+    left: calc(50% + var(--rect-size) / 2 + var(--rect-padding-size) + var(--rect-border-size) + 75px);
+    top: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size) - var(--rect-border-size));
+    height: calc(var(--rect-size) + var(--rect-padding-size) * 2 + var(--rect-border-size) * 2);
+
+    .dashes {
+        width: 75px;
+        left: -75px;
+    }
+}
+
+#clientWidth {
+    top: calc(50% + var(--rect-size) / 2 + var(--rect-padding-size) + var(--rect-border-size) + 25px);
+    left: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size));
+    width: calc(var(--rect-size) + (var(--rect-padding-size) * 2) - var(--scroll-size));
+
+    .dashes {
+        height: 25px;
+        top: -25px;
+    }
+}
+
+#offsetWidth {
+    top: calc(50% + var(--rect-size) / 2 + var(--rect-padding-size) + var(--rect-border-size) + 75px);
+    left: calc(50% - var(--rect-size) / 2 - var(--rect-padding-size) - var(--rect-border-size));
+    width: calc(var(--rect-size) + var(--rect-padding-size) * 2 + var(--rect-border-size) * 2);
+
+    .dashes {
+        height: 75px;
+        top: -75px;
+    }
+}

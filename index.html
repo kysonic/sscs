@@ -20,6 +20,7 @@
                     tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
                 </div>
 
+                <!-- Scroll Visuals -->
                 <div
                     id="scrollTopVisual"
                     data-bind-style="scrollTopVisual:height = value + 'px'; marginTop = -value + 'px'"
@@ -30,7 +31,9 @@
                     data-bind-style="scrollHeightVisual:height = value + 'px'"
                     class="scroll-height-visual"
                 ></div>
+                <!-- Scroll Visuals -->
 
+                <!-- Arrows -->
                 <div
                     id="scrollTop"
                     data-bind-style="scrollTop: height = value + 'px'; marginTop = -value + 'px'"
@@ -38,8 +41,10 @@
                     class="interface"
                 >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">scrollTop</div>
+                    <div class="text-container" data-tip="scrollTop">
+                        <div class="text" data-tip="scrollTop">
+                            <span data-tip="scrollTop">scrollTop</span> <span class="info" data-tip="scrollTop">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="scrollTop" class="value">0</div>
@@ -54,8 +59,11 @@
                     class="interface"
                 >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">scrollHeight</div>
+                    <div class="text-container" data-tip="scrollHeight">
+                        <div class="text" data-tip="scrollHeight">
+                            <span data-tip="scrollHeight">scrollHeight</span>
+                            <span class="info" data-tip="scrollHeight">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="scrollHeight" class="value">0</div>
@@ -63,50 +71,85 @@
                     <div class="dashes"></div>
                 </div>
 
-                <div id="offsetTop" data-bind-show="displayOffsetTop" class="interface">
+                <div
+                    id="offsetTop"
+                    data-bind-show="displayOffsetTop"
+                    data-bind-style="offsetTop: height = value + 'px'"
+                    class="interface"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">offsetTop</div>
+                    <div class="text-container" data-tip="offsetTop">
+                        <div class="text" data-tip="offsetTop">
+                            <span data-tip="offsetTop">offsetTop</span> <span class="info" data-tip="offsetTop">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="offsetTop" class="value">0</div>
                     </div>
                 </div>
 
-                <div id="offsetLeft" data-bind-show="displayOffsetLeft" class="interface horizontal">
+                <div
+                    id="offsetLeft"
+                    data-bind-show="displayOffsetLeft"
+                    data-bind-style="offsetLeft: width = value + 'px'"
+                    class="interface horizontal"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">offsetLeft</div>
+                    <div class="text-container" data-tip="offsetLeft">
+                        <div class="text" data-tip="offsetLeft">
+                            <span data-tip="offsetLeft">offsetLeft</span> <span class="info" data-tip="offsetLeft">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="offsetLeft" class="value">0</div>
                     </div>
                 </div>
 
-                <div id="clientTop" data-bind-show="displayClientTop" class="interface small">
+                <div
+                    id="clientTop"
+                    data-bind-show="displayClientTop"
+                    data-bind-style="clientTop: height = value + 'px'"
+                    class="interface small"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">clientTop</div>
+                    <div class="text-container" data-tip="clientTop">
+                        <div class="text" data-tip="clientTop">
+                             <span data-tip="clientTop">clientTop</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="clientTop" class="value">0</div>
                     </div>
                 </div>
 
-                <div id="clientLeft" data-bind-show="displayClientLeft" class="interface horizontal small">
+                <div
+                    id="clientLeft"
+                    data-bind-show="displayClientLeft"
+                    data-bind-style="clientLeft: width = value + 'px'"
+                    class="interface horizontal small"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">clientLeft</div>
+                    <div class="text-container" data-tip="clientLeft">
+                        <div class="text" data-tip="clientLeft">
+                            <span data-tip="clientLeft">clientLeft</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="clientLeft" class="value">0</div>
                     </div>
                 </div>
 
-                <div id="clientHeight" data-bind-show="displayClientHeight" class="interface">
+                <div
+                    id="clientHeight"
+                    data-bind-show="displayClientHeight"
+                    data-bind-style="clientHeight: height = value + 'px'"
+                    class="interface"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">clientHeight</div>
+                    <div class="text-container" data-tip="clientHeight">
+                        <div class="text" data-tip="clientHeight">
+                            <span data-tip="clientHeight">clientHeight</span> <span class="info" data-tip="clientHeight">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="clientHeight" class="value">0</div>
@@ -114,10 +157,17 @@
                     <div class="dashes"></div>
                 </div>
 
-                <div id="offsetHeight" data-bind-show="displayOffsetHeight" class="interface">
+                <div
+                    id="offsetHeight"
+                    data-bind-show="displayOffsetHeight"
+                    data-bind-style="offsetHeight: height = value + 'px'"
+                    class="interface"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">offsetHeight</div>
+                    <div class="text-container" data-tip="offsetHeight">
+                        <div class="text" data-tip="offsetHeight">
+                            <span data-tip="offsetHeight">offsetHeight</span> <span class="info" data-tip="offsetHeight">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="offsetHeight" class="value">0</div>
@@ -125,10 +175,17 @@
                     <div class="dashes"></div>
                 </div>
 
-                <div id="clientWidth" data-bind-show="displayClientWidth" class="interface horizontal">
+                <div
+                    id="clientWidth"
+                    data-bind-show="displayClientWidth"
+                    data-bind-style="clientWidth: width = value + 'px'"
+                    class="interface horizontal"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">clientWidth</div>
+                    <div class="text-container" data-tip="clientWidth">
+                        <div class="text" data-tip="clientWidth">
+                            <span data-tip="clientWidth">clientWidth</span> <span class="info" data-tip="clientWidth">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="clientWidth" class="value">0</div>
@@ -136,10 +193,17 @@
                     <div class="dashes"></div>
                 </div>
 
-                <div id="offsetWidth" data-bind-show="displayOffsetWidth" class="interface horizontal">
+                <div
+                    id="offsetWidth"
+                    data-bind-show="displayOffsetWidth"
+                    data-bind-style="offsetWidth: width = value + 'px'"
+                    class="interface horizontal"
+                >
                     <div class="arrow"></div>
-                    <div class="text-container">
-                        <div class="text">offsetWidth</div>
+                    <div class="text-container" data-tip="offsetWidth">
+                        <div class="text" data-tip="offsetWidth">
+                            <span data-tip="offsetWidth">offsetWidth</span> <span class="info" data-tip="offsetWidth">i</span>
+                        </div>
                     </div>
                     <div class="value-container">
                         <div data-bind-text="offsetWidth" class="value">0</div>
@@ -147,6 +211,9 @@
                     <div class="dashes"></div>
                 </div>
 
+                <!-- Arrows -->
+
+                <!-- Controls -->
                 <div id="buttons" class="buttons">
                     <button data-bind-class="displayOffsetTop:active" class="btn">offsetTop</button>
                     <button data-bind-class="displayOffsetLeft:active" class="btn">offsetLeft</button>
@@ -170,12 +237,14 @@
                     >
                     <input id="padding" type="range" value="20" min="20" max="40" />
                 </div>
-
                 <div class="show-html">
                     <button id="showHtml" class="btn">HTML</button>
                 </div>
+
+                <!-- Controls -->
             </div>
-            <div data-bind-show="showHtml:value" id="html" class="wrapper">
+            <!-- Code -->
+            <div data-bind-show="showHtml:value" id="html" class="wrapper" style="display: none">
                 <div class="blocks">
                     <div class="block html">
                         <div class="code-container" id="htmlCode"></div>
@@ -188,7 +257,27 @@
                     <button id="showSchema" class="btn">SCHEMA</button>
                 </div>
             </div>
+            <!-- Code -->
         </div>
+        <!-- Dialog -->
+        <dialog class="dialog" data-bind-attr="tip:open">
+            <div class="backdrop">
+                <div class="content">
+                    <h3 data-bind-text="tipTitle">TIPS</h3>
+                    <p data-bind-html="tip">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
+                        pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
+                        sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa
+                        nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+                        sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet
+                        consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id
+                        cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                    </p>
+                    <button id="closeDialog" class="btn">ПОНЯЛ</button>
+                </div>
+            </div>
+        </dialog>
+        <!-- Dialog -->
         <script src="./src/js/main.js" type="module"></script>
     </body>
 </html>

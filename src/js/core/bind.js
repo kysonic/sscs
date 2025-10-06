@@ -40,6 +40,18 @@ export function createStoreBinder(store) {
                 ),
             );
 
+            nodes = nodes.concat(
+                Array.from(document.querySelectorAll('*[data-bind-attr]')).map((node) =>
+                    divideNodes(node, 'bindAttr', 'Attr'),
+                ),
+            );
+
+            nodes = nodes.concat(
+                Array.from(document.querySelectorAll('*[data-bind-html]')).map((node) =>
+                    divideNodes(node, 'bindHtml', 'Html'),
+                ),
+            );
+
             nodes = nodes.flat();
 
             store.subscribe(this.handleStoreChange.bind(this));
@@ -78,6 +90,17 @@ export function createStoreBinder(store) {
                 const [p, v] = prop.split('=');
                 item.node.style[p.trim()] = eval(v.trim().replace('value', value));
             }
+        },
+
+        handleAttr(item, value) {
+            const [prop, attr, interpolation] = item.interpolation.split(':');
+            const v = interpolation ? eval(interpolation.replace('value', value)) : value;
+            item.node[v ? 'setAttribute' : 'removeAttribute'](attr, v);
+        },
+
+         handleHtml(item, value) {
+            const v = item.hasInterpolation ? eval(item.interpolation.replace('value', value)) : value;
+            item.node.innerHTML = v;
         },
     };
 }

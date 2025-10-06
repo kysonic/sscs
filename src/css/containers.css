@@ -21,7 +21,7 @@
             align-items: center;
 
             background-color: var(--wrapper-background-color);
-            border: 1px solid var(--rect-border-color);
+            border: 5px solid var(--rect-border-color);
         }
     }
 }

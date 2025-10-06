@@ -31,6 +31,8 @@ export const store = createStore({
     rectPadding: 20,
     // Globals
     showHtml: false,
+    tip: '',
+    tipTitle: ''
 });
 
 // COMPUTED
