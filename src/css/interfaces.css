@@ -1,3 +1,11 @@
+:root {
+    --arrow-color: rgb(236, 177, 210);
+    --arrow-text-color: rgb(179, 65, 129);
+    --arrow-value-color: rgb(48, 155, 197);
+    --scroll-view-color: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+    --arrow-size: 15px;
+}
+
 .sscs {
     .interface {
         position: absolute;

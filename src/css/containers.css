@@ -1,3 +1,8 @@
+:root {
+    --wrapper-background-color: #f1ecec;
+    --wrapper-border-color: var(--rect-border-color);
+}
+
 .sscs {
     .container {
         display: flex;
@@ -21,7 +26,7 @@
             align-items: center;
 
             background-color: var(--wrapper-background-color);
-            border: 5px solid var(--rect-border-color);
+            border: 5px solid var(--wrapper-border-color);
         }
     }
 }

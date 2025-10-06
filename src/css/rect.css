@@ -1,3 +1,11 @@
+:root {
+    --rect-size: 300px;
+    --rect-border-size: 50px;
+    --rect-padding-size: 20px;
+    --rect-border-color: rgb(176, 210, 211);
+    --scroll-size: 15px;
+}
+
 .sscs {
     .rect {
         width: var(--rect-size);

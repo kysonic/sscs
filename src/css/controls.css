@@ -1,3 +1,11 @@
+:root {
+    --controls-background-color: #ffffff69;
+    --button-background-color: #fff;
+    --button-background-hover-color: #ebe9e9;
+    --button-background-active-color: #599bb3;
+    --button-background-active-hover-color: #4d879c;
+    --button-text-color: var(--text-color);
+}
 .sscs {
     /* Buttons */
 
@@ -17,29 +25,29 @@
         flex-wrap: wrap;
 
         border-radius: 8px;
-        background-color: #ffffff69;
+        background-color: var(--controls-background-color);
         z-index: 11;
 
         .btn {
-            background-color: #fff;
+            background-color: var(--button-background-color);
             border-radius: 8px;
             display: inline-block;
             cursor: pointer;
-            color: var(--text-color);
+            color: var(--button-text-color);
             padding: 10px 12px;
             text-decoration: none;
             border: none;
 
             &:hover {
-                background-color: #ebe9e9;
+                background-color: var(--button-background-hover-color);
             }
 
             &.active {
-                background-color: #599bb3;
+                background-color: var(--button-background-active-color);
                 color: #ffffff;
 
                 &:hover {
-                    background-color: #4d879c;
+                    background-color: var(--button-background-active-hover-color);
                 }
             }
         }
@@ -65,7 +73,7 @@
         flex-wrap: wrap;
 
         border-radius: 8px;
-        background-color: #ffffff69;
+        background-color: var(--controls-background-color);
         z-index: 11;
     }
 
@@ -76,17 +84,17 @@
         top: 10px;
         right: 10px;
         border-radius: 8px;
-        background-color: #ffffff69;
+        background-color: var(--controls-background-color);
         z-index: 11;
 
         .btn {
-            background-color: #fff;
+            background-color: var(--button-background-color);
             border-radius: 8px;
             display: inline-block;
             cursor: pointer;
             padding: 5px;
             text-transform: uppercase;
-            color: var(--text-color);
+            color: var(--button-text-color);
             font-weight: bold;
             text-decoration: none;
             border: none;

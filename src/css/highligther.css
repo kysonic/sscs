@@ -1,11 +1,17 @@
+:root {
+    --code-font: 'Courier New', monospace;
+    --code-color: #2c2c2c;
+    --code-background-color: #fff;
+}
+
 .code-container {
     box-sizing: border-box;
     height: 100%;
-    background: #fff;
-    color: #2c2c2c;
+    background: var(--code-background-color);
+    color: var(--code-color);
     padding: 20px;
     border-radius: 8px;
-    font-family: 'Courier New', monospace;
+    font-family: var(--code-font);
     font-size: 14px;
     line-height: 1.5;
     tab-size: 4;

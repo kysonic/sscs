@@ -1,3 +1,7 @@
+:root {
+    --code-background-color: #ffffffa5;
+}
+
 .sscs {
     .blocks {
         box-sizing: border-box;
@@ -14,7 +18,7 @@
         .block {
             height: 100%;
 
-            background-color: #ffffffa5;
+            background-color: var(--code-background-color);
             border-radius: 8px;
         }
     }

@@ -1,17 +1,5 @@
 :root {
     /* Colors */
     --background-color: #f7f4f4;
-    --wrapper-background-color: #f1ecec;
     --text-color: #494747;
-    --arrow-color: rgb(236, 177, 210);
-    --arrow-text-color: rgb(179, 65, 129);
-    --arrow-value-color: rgb(48, 155, 197);
-    --rect-border-color: rgb(176, 210, 211);
-    --scroll-view-color: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
-    /* Sizes */
-    --rect-size: 300px;
-    --rect-border-size: 50px;
-    --rect-padding-size: 20px;
-    --arrow-size: 15px;
-    --scroll-size: 15px;
 }
