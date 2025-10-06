@@ -1,7 +1,33 @@
-const AT_LEAST_ONE_LETTER = /\w+/;
-const IS_TAG = /<\/?[\w\-:]+(?:\s+[^>]*)?\/?>/;
-const IS_ATTRIBUTE = /(\b\w[\w\-]*)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi;
-const IS_QUOTE = /\"/g;
+const createHtmlRules = () => {
+    const tagRule = '<\\/?[\\w\\-:]+(?:\\s+[^>]*)?\\/?>';
+    const tagRegexp = new RegExp(tagRule, 'gi');
+    const attributeRule = `(\\b\\w[\\w\\-]*)\\s*=\\s*("[^"]*"|'[^']*'|[^\\s>]+)`;
+    const attributeRegexp = new RegExp(attributeRule, 'gi');
+    const quoteRule = '\\"';
+    const quoteRegexp = new RegExp(quoteRule, 'gi');
+    const notBracketRule = '[^<]+';
+    const notBracketRegexp = new RegExp(notBracketRule);
+    const tagNameRule = '</?([\\w\\-:]+)';
+    const tagNameRegexp = new RegExp(tagNameRule);
+
+    const pattern = new RegExp(tagRule + '|' + notBracketRule, 'gi');
+
+    return {
+        tagRule,
+        tagRegexp,
+        attributeRule,
+        attributeRegexp,
+        quoteRule,
+        quoteRegexp,
+        notBracketRule,
+        notBracketRegexp,
+        tagNameRule,
+        tagNameRegexp,
+        pattern,
+    };
+};
+
+const RULES = createHtmlRules();
 
 export function createHtmlHighlighter() {
     return {
@@ -11,23 +37,29 @@ export function createHtmlHighlighter() {
             }
 
             return `<span class="html-attribute">${name.replace(
-                IS_QUOTE,
+                RULES.quoteRegexp,
                 '',
-            )}</span>=<span class="html-value">"${value.replace(IS_QUOTE, '')}"</span>`;
+            )}</span>=<span class="html-value">"${value.replace(RULES.quoteRegexp, '')}"</span>`;
         },
 
-        highlightTag(content) {
-            let highlighted = content.replace('<', '&lt;').replace('>', '&gt;');
-            const tagNameMatch = content.match(/<\/?([\w\-:]+)/);
+        highlightTag(match) {
+            let highlighted = match[0].replace('<', '&lt;').replace('>', '&gt;');
+            const tagNameMatch = match[0].match(RULES.tagNameRegexp);
 
             if (tagNameMatch) {
                 const tagName = tagNameMatch[1];
                 highlighted = highlighted.replace(tagName, `<span class="html-tag-name">${tagName}</span>`);
             }
 
-            highlighted = highlighted.replace(IS_ATTRIBUTE, (match, name, value) =>
+            highlighted = highlighted.replace(RULES.attributeRegexp, (match, name, value) =>
                 this.highlightAttribute(match, name, value),
             );
+
+            return highlighted;
+        },
+
+        highlightText(match) {
+            const highlighted = `<span class="html-text">${match[0]}</span>`;
 
             return highlighted;
         },
@@ -37,27 +69,20 @@ export function createHtmlHighlighter() {
 
             const matches = [];
 
-            const pattern = /<\/?[\w\-:]+(?:\s+[^>]*)?\/?>|[^<]+/gi;
-
             let match;
-            while ((match = pattern.exec(text)) !== null) {
-                matches.push({
-                    content: match[0],
-                    index: match.index,
-                });
+            while ((match = RULES.pattern.exec(text)) !== null) {
+                matches.push(match);
             }
 
-            matches
-                //.filter((token) => Boolean(AT_LEAST_ONE_LETTER.test(token.content)))
-                .forEach((token, i) => {
-                    if (IS_TAG.test(token.content)) {
-                        result += this.highlightTag(token.content);
+            matches.forEach((match, i) => {
+                if (RULES.tagRegexp.test(match[0])) {
+                    result += this.highlightTag(match);
 
-                        return;
-                    }
+                    return;
+                }
 
-                    result += `<span class="html-text">${token.content}</span>`;
-                });
+                result += this.highlightText(match);
+            });
 
             return result;
         },
