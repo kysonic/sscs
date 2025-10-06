@@ -67,7 +67,8 @@ export function createStoreBinder(store) {
         },
 
         handleShow(item, value) {
-            item.node.style.display = value ? 'flex' : 'none';
+            const v = item.hasInterpolation ? eval(item.interpolation.replace('value', value)) : value;
+            item.node.style.display = v ? 'flex' : 'none';
         },
 
         handleStyle(item, value) {

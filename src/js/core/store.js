@@ -12,6 +12,10 @@ export function createStore(initialState = {}) {
 
             return true;
         },
+
+        ownKeys(target) {
+            return Reflect.ownKeys(target);
+        },
     });
 
     return {
@@ -36,6 +40,12 @@ export function createStore(initialState = {}) {
         emit(property, value) {
             state[property] = value;
             subscribers.forEach((callback) => callback({ ...state }, { [property]: value }, property));
+        },
+
+        init() {
+            for (let prop in state) {
+                this.emit(prop, state[prop]);
+            }
         },
     };
 }

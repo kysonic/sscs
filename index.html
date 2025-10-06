@@ -7,9 +7,9 @@
         <meta name="description" content="Interactive DOM Scroll and Size Cheat Sheet" />
         <link rel="stylesheet" href="./src/css/main.css" />
     </head>
-    <body>
+    <body class="sscs">
         <div class="container">
-            <div class="wrapper">
+            <div data-bind-show="showHtml:!value" id="schema" class="wrapper">
                 <div id="rect" class="rect">
                     Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
                     pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed
@@ -161,12 +161,31 @@
                 </div>
 
                 <div id="controls" class="controls">
-                    <label data-bind-text="rectSize: 'React size - ' + value" for="size">Rect size - 300</label>
+                    <label data-bind-text="rectSize: 'Rect size - ' + value" for="size">Rect size - 300</label>
                     <input id="size" type="range" value="300" min="300" max="400" />
-                    <label data-bind-text="rectBorder: 'Rect border - ' + value"  for="border">Rect border - 50</label>
+                    <label data-bind-text="rectBorder: 'Rect border - ' + value" for="border">Rect border - 50</label>
                     <input id="border" type="range" value="50" min="50" max="100" />
-                    <label data-bind-text="rectPadding: 'Rect padding - ' + value" for="padding">Rect padding - 20</label>
+                    <label data-bind-text="rectPadding: 'Rect padding - ' + value" for="padding"
+                        >Rect padding - 20</label
+                    >
                     <input id="padding" type="range" value="20" min="20" max="40" />
+                </div>
+
+                <div class="show-html">
+                    <button id="showHtml" class="btn">HTML</button>
+                </div>
+            </div>
+            <div data-bind-show="showHtml:value" id="html" class="wrapper">
+                <div class="blocks">
+                    <div class="block html">
+                        <div class="code-container" id="htmlCode"></div>
+                    </div>
+                    <div class="block css">
+                        <div class="code-container" id="cssCode"></div>
+                    </div>
+                </div>
+                <div class="show-html">
+                    <button id="showSchema" class="btn">SCHEMA</button>
                 </div>
             </div>
         </div>

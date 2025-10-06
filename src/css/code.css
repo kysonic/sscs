@@ -1,0 +1,21 @@
+.sscs {
+    .blocks {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+
+        padding: 20px;
+        gap: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .block {
+            height: 100%;
+
+            background-color: #ffffffa5;
+            border-radius: 8px;
+        }
+    }
+}

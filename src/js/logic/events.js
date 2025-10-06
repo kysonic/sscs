@@ -45,3 +45,11 @@ store.subscribe((state, changes, prop) => {
         updateInterfaceValues();
     }
 });
+
+showHtml.addEventListener('click', () => {
+    store.state.showHtml = true;
+});
+
+showSchema.addEventListener('click', () => {
+    store.state.showHtml = false;
+});

@@ -3,17 +3,17 @@ import { createStore } from '../core/store.js';
 // Store support only first level props
 export const store = createStore({
     // Display
-    displayOffsetTop: null,
-    displayOffsetLeft: null,
-    displayClientTop: null,
-    displayClientLeft: null,
-    displayClientWidth: null,
-    displayClientHeight: null,
-    displayOffsetWidth: null,
-    displayOffsetHeight: null,
-    displayScrollTop: null,
-    displayScrollHeight: null,
-    displayScrollTopByHeight: null,
+    displayOffsetTop: true,
+    displayOffsetLeft: true,
+    displayClientTop: true,
+    displayClientLeft: true,
+    displayClientWidth: true,
+    displayClientHeight: true,
+    displayOffsetWidth: true,
+    displayOffsetHeight: true,
+    displayScrollTop: true,
+    displayScrollHeight: true,
+    displayScrollTopByHeight: true,
     // Values
     offsetTop: 0,
     offsetLeft: 0,
@@ -29,21 +29,29 @@ export const store = createStore({
     rectSize: 300,
     rectBorder: 50,
     rectPadding: 20,
+    // Globals
+    showHtml: false,
 });
 
 // COMPUTED
 
 function computedScrollTopVisual(state) {
-    store.emit('scrollTopVisual', state['scrollTop'] - 50 > 0 ? state['scrollTop'] - 50 : 0);
-}
-
-function computedDisplayScrollTop(state) {
-    store.emit('computedDisplayScrollTop', state['scrollTop'] - 50 > 25 && state['displayScrollTop']);
+    store.emit(
+        'scrollTopVisual',
+        state['scrollTop'] - state['rectBorder'] > 0 ? state['scrollTop'] - state['rectBorder'] : 0,
+    );
 }
 
 function computedScrollHeightVisual(state) {
     const value = state['scrollHeight'] - state['offsetHeight'] + state['clientTop'] - state['scrollTop'];
     store.emit('scrollHeightVisual', value > 0 ? value : 0);
+}
+
+function computedDisplayScrollTop(state) {
+    store.emit(
+        'computedDisplayScrollTop',
+        state['scrollTop'] - state['rectBorder'] > state['rectBorder'] / 2 && state['displayScrollTop'],
+    );
 }
 
 store.subscribe((state, changes, prop) => {
